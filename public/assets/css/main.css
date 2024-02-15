@@ -62,8 +62,8 @@ h6 {
 section {
   overflow: hidden;
   padding: 50px 0;
-  scroll-margin-top: 90px;
-  /* overflow: clip; */
+  scroll-margin-top: 50px;
+  /* overflow: auto; */
 }
 
 .swiper-slide img {
@@ -76,7 +76,7 @@ section {
 
 .section-header {
     text-align: center;
-    padding-bottom: 0px;
+
 }
 
 .section-header h2 {
@@ -1654,6 +1654,13 @@ section {
 
 .footer .footer-links {
   margin-bottom: 30px;
+}
+
+.footer .HQ {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  font-size: 14px;
 }
 
 .footer .footer-links ul {
