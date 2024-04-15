@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\UploadsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,18 +14,6 @@ use App\Http\Controllers\CarouselController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.dashboard');
-});
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('home', function () {
-//         return view('pages.dashboard');
-//     })->name('home');
-//     // User
-//     Route::resource('user', UserController::class);
-//     // Kategori
-//     Route::resource('category', CategoryController::class);
-//     // Produk
-//     Route::resource('product', ProductController::class);
-// });
+Route::get('/', [UploadsController::class, 'index'])->name('tampil');
+Route::get('tambah', [UploadsController::class, 'create'])->name('tambah-data');
+Route::post('tambah/submit', [UploadsController::class, 'store'])->name('submit-data');

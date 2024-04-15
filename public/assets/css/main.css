@@ -20,7 +20,7 @@
 /* Colors */
 :root {
   --color-default: #212529;
-  --color-primary: #FFC107;
+  --color-primary: #FECB00;
   --color-secondary: #37373f;
 }
 
@@ -111,7 +111,7 @@ section {
     border-radius: 100px;
     border: 0;
     z-index: 9999;
-    color: #ffcc00;
+    color: #FECB00;
     transition: .2s;
   }
 
@@ -140,7 +140,7 @@ section {
   .btn-floating.whatsapp {
     bottom: 50px;
     background-color: #000;
-    border: 2px solid #ffcc00;
+    border: 2px solid #FECB00;
   }
 
   .btn-floating.whatsapp:hover {

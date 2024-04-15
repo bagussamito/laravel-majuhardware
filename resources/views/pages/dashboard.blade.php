@@ -11,7 +11,7 @@
 
     <!-- Favicons -->
     <link href="assets/img/logo.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/logo.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
+    <header id="header" class="header fixed-top d-flex align-items-between">
         <div class="container d-flex align-items-center justify-content-between">
 
             <a href="#" class="logo d-flex align-items-center me-auto me-lg-0">
@@ -61,6 +61,8 @@
                     </a>
 
         </div>
+
+        <li style="color: transparent"><a href="#"></a></li>
     </header><!-- End Header -->
 
     <section id="home">
@@ -72,19 +74,25 @@
                     aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/banner/images1.jpg"><img src="assets/img/banner/images1.jpg"></a></div>
+                            href="assets/img/banner/images1.jpg"><img src="assets/img/banner/banner 1.jpg"></a></div>
                 </div>
                 <div class="carousel-item">
                     <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/banner/images2.jpg"><img src="assets/img/banner/images2.jpg"></a></div>
+                            href="assets/img/banner/images2.jpg"><img src="assets/img/banner/banner 2.jpg"></a></div>
                 </div>
                 <div class="carousel-item">
                     <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/banner/images3.jpg"><img src="assets/img/banner/images3.jpg"></a></div>
+                            href="assets/img/banner/images3.jpg"><img src="assets/img/banner/banner 3.jpg"></a></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
+                            href="assets/img/banner/images3.jpg"><img src="assets/img/banner/banner 4.jpg"></a></div>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -166,20 +174,38 @@
                     <div class="row gy-5">
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/promoip13.jpg" class="glightbox"><img
-                                    src="assets/img/promo/promoip13.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/gadget/oppoAKULAKU.jpg" class="glightbox"><img
+                                    src="assets/img/promo/gadget/oppo AKULAKU.jpg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/promoreno10.jpg" class="glightbox"><img
-                                    src="assets/img/promo/promoreno10.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/gadget/oppo BAF.jpg" class="glightbox"><img
+                                    src="assets/img/promo/gadget/oppo BAF.jpg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/promooppo.jpg" class="glightbox"><img
-                                    src="assets/img/promo/promooppo.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/gadget/oppo fif.jpg" class="glightbox"><img
+                                    src="assets/img/promo/gadget/oppo fif.jpg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/gadget/oppo HCI.jpg" class="glightbox"><img
+                                    src="assets/img/promo/gadget/oppo HCI.jpg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/gadget/oppo kp.jpg" class="glightbox"><img
+                                    src="assets/img/promo/gadget/oppo kp.jpg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/gadget/oppo SHOPEE.jpg" class="glightbox"><img
+                                    src="assets/img/promo/gadget/oppo SHOPEE.jpg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
@@ -195,20 +221,38 @@
                     <div class="row gy-5">
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/lenovoideapad.jpg" class="glightbox"><img
-                                    src="assets/img/promo/lenovoideapad.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/laptop/lenovoideapad.jpg" class="glightbox"><img
+                                    src="assets/img/promo/laptop/lenovoideapad.jpg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/lenovoideapad.jpg" class="glightbox"><img
-                                    src="assets/img/promo/lenovoideapad.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/laptop/axio.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/laptop/axio.jpeg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/lenovoideapad.jpg" class="glightbox"><img
-                                    src="assets/img/promo/lenovoideapad.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/laptop/able.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/laptop/able.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/laptop/hpslim.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/laptop/hpslim.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/laptop/legion.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/laptop/legion.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/laptop/nitro5.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/laptop/nitro5.jpeg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
@@ -224,18 +268,39 @@
                     <div class="row gy-5">
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/epson.jpg" class="glightbox"><img
-                                    src="assets/img/promo/epson.jpg" class="menu-img img-fluid" alt=""></a>
+                            <a href="assets/img/promo/computer/epson.jpg" class="glightbox"><img
+                                    src="assets/img/promo/computer/epson.jpg" class="menu-img img-fluid"
+                                    alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/epson.jpg" class="glightbox"><img
-                                    src="assets/img/promo/epson.jpg" class="menu-img img-fluid" alt=""></a>
+                            <a href="assets/img/promo/computer/epson.jpg" class="glightbox"><img
+                                    src="assets/img/promo/computer/epson.jpg" class="menu-img img-fluid"
+                                    alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/epson.jpg" class="glightbox"><img
-                                    src="assets/img/promo/epson.jpg" class="menu-img img-fluid" alt=""></a>
+                            <a href="assets/img/promo/computer/epson.jpg" class="glightbox"><img
+                                    src="assets/img/promo/computer/epson.jpg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/computer/hpprint.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/computer/hpprint.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/computer/hpprint.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/computer/hpprint.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/computer/hpprint.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/computer/hpprint.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
                         </div><!-- Menu Item -->
 
                     </div>
@@ -250,22 +315,41 @@
                     <div class="row gy-5">
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/xiaomitv.jpg" class="glightbox"><img
-                                    src="assets/img/promo/xiaomitv.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/tv&av/xiaomitv.jpg" class="glightbox"><img
+                                    src="assets/img/promo/tv&av/xiaomitv.jpg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/xiaomitv.jpg" class="glightbox"><img
-                                    src="assets/img/promo/xiaomitv.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/tv&av/xiaomitv.jpg" class="glightbox"><img
+                                    src="assets/img/promo/tv&av/xiaomitv.jpg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/xiaomitv.jpg" class="glightbox"><img
-                                    src="assets/img/promo/xiaomitv.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/tv&av/xiaomitv.jpg" class="glightbox"><img
+                                    src="assets/img/promo/tv&av/xiaomitv.jpg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/tv&av/xiaomitv2.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/tv&av/xiaomitv2.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/tv&av/xiaomitv2.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/tv&av/xiaomitv2.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/tv&av/xiaomitv2.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/tv&av/xiaomitv2.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
                     </div>
                 </div><!-- End Dinner Menu Content -->
 
@@ -278,20 +362,38 @@
                     <div class="row gy-5">
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/xiaomitv.jpg" class="glightbox"><img
-                                    src="assets/img/promo/xiaomitv.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/xiaomitv.jpg" class="glightbox"><img
-                                    src="assets/img/promo/xiaomitv.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/xiaomitv.jpg" class="glightbox"><img
-                                    src="assets/img/promo/xiaomitv.jpg" class="menu-img img-fluid"
+                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
+                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
                     </div>
@@ -322,6 +424,24 @@
                                     src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
                                     alt=""></a>
                         </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/galaxywatch.jpg" class="glightbox"><img
+                                    src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/galaxywatch.jpg" class="glightbox"><img
+                                    src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/galaxywatch.jpg" class="glightbox"><img
+                                    src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
+                                    alt=""></a>
+                        </div><!-- Menu Item -->
                     </div>
                 </div><!-- End Dinner Menu Content -->
 
@@ -332,6 +452,21 @@
                     </div>
 
                     <div class="row gy-5">
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/volta.jpg" class="glightbox"><img
+                                    src="assets/img/promo/volta.jpg" class="menu-img img-fluid" alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/volta.jpg" class="glightbox"><img
+                                    src="assets/img/promo/volta.jpg" class="menu-img img-fluid" alt=""></a>
+                        </div><!-- Menu Item -->
+
+                        <div class="col-lg-4 promo-item">
+                            <a href="assets/img/promo/volta.jpg" class="glightbox"><img
+                                    src="assets/img/promo/volta.jpg" class="menu-img img-fluid" alt=""></a>
+                        </div><!-- Menu Item -->
 
                         <div class="col-lg-4 promo-item">
                             <a href="assets/img/promo/volta.jpg" class="glightbox"><img
@@ -643,7 +778,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
-                    <a href='http://www.freevisitorcounters.com'>http://freevisitorcounters.com</a>
+                    <a href='http://www.freevisitorcounters.com'></a>
                     <script type='text/javascript'
                         src='https://www.freevisitorcounters.com/auth.php?id=5a68016543d43751775d15be09e241da1b2e1905'></script>
                     <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1141627/t/2"></script>
