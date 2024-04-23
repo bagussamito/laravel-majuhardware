@@ -49,9 +49,38 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#promo">Promo</a></li>
                     <li><a href="#store">Store</a></li>
-
-                    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-                    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+                    <li class="dropdown"><a href="#"><span>Price List</span>
+                            <iclass="bi bi-chevron-down dropdown-indicator"></iclass=></a>
+                        <ul>
+                            <li><a href="https://drive.google.com/drive/folders/1mlf-azl1oNDSykrnQRq7ht97MFvokcFL"
+                                    style="color: black;">Gadget</a>
+                            </li>
+                            <li><a href="https://drive.google.com/drive/folders/1K20tVsMjwzEG5knz1Z9JjXnDg1WzVbIp"
+                                    style="color: black;">Printer</a>
+                            </li>
+                            <li><a
+                                    href="https://drive.google.com/drive/folders/1u7TlgSvZMkDwksIBfXTE2Acq52Qx4E8P"style="color: black;">Laptop</a>
+                            </li>
+                            <li><a
+                                    href="https://drive.google.com/drive/folders/1AC7XUXZAa02FTynQuJP42Xzkg3G_i-DL"style="color: black;">Elektronik</a>
+                            </li>
+                            <li><a
+                                    href="https://drive.google.com/drive/folders/1A6beWdAblro3oqkCUmBAwkKpc0nB6tFh"style="color: black;">Komputer</a>
+                            </li>
+                            <li><a
+                                    href="https://drive.google.com/drive/folders/1Ng-wb7R74V7f5sz1vzAQ3a68TzzvZb8E"style="color: black;">Wearable
+                                    & IOT</a></li>
+                            <li>
+                            <li><a
+                                    href="https://drive.google.com/drive/folders/1_KCCMd1MYyHbOK2aK-Ffe0FjNvdYkXJF"style="color: black;">Aksesoris</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://drive.google.com/drive/folders/1YRnjeY56G8HYw9zo7l7RAQvnmUIDYhY6"style="color: black;">Elektrtik
+                                    Vehicle</a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <a href="https://wa.me/+628113735757" target="_blank">
                         <button class="btn-floating whatsapp">
@@ -59,41 +88,35 @@
                             <span class=" text-warning">0811-373-5757</span>
                         </button>
                     </a>
+                </ul>
+            </nav><!-- .navbar -->
 
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
         </div>
-
-        <li style="color: transparent"><a href="#"></a></li>
     </header><!-- End Header -->
 
     <section id="home">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
+                @foreach ($carouselImages as $key => $image)
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}"
+                        aria-current="{{ $key == 0 ? 'true' : 'false' }}"
+                        aria-label="Slide {{ $key + 1 }}"></button>
+                @endforeach
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/banner/images1.jpg"><img src="assets/img/banner/banner 1.jpg"></a></div>
-                </div>
-                <div class="carousel-item">
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/banner/images2.jpg"><img src="assets/img/banner/banner 2.jpg"></a></div>
-                </div>
-                <div class="carousel-item">
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/banner/images3.jpg"><img src="assets/img/banner/banner 3.jpg"></a></div>
-                </div>
-                <div class="carousel-item">
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                            href="assets/img/banner/images3.jpg"><img src="assets/img/banner/banner 4.jpg"></a></div>
-                </div>
+                @foreach ($carouselImages as $key => $image)
+                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                        <div class="swiper-slide">
+                            <a class="glightbox" data-gallery="images-gallery"
+                                href="{{ asset('storage/' . $image->image_path) }}">
+                                <img src="{{ asset('storage/' . $image->image_path) }}">
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
@@ -137,21 +160,15 @@
                 </li><!-- End tab nav item -->
 
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#promo-tv">
-                        <h4>TV & AV</h4>
+                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#promo-elektronik">
+                        <h4>Electronics</h4>
                     </a>
 
-                </li><!-- End tab nav item -->
-
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#promo-homeappliances">
-                        <h4>Home Appliances</h4>
-                    </a>
                 </li><!-- End tab nav item -->
 
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="tab" data-bs-target="#promo-accessories">
-                        <h4>Accessories</h4>
+                        <h4>Acessories</h4>
                     </a>
                 </li><!-- End tab nav item -->
 
@@ -166,49 +183,28 @@
             <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
 
                 <div class="tab-pane fade active show" id="promo-gadget">
-
                     <div class="tab-header text-center">
                         {{-- <h2>Hot Promo</h2> --}}
                     </div>
 
                     <div class="row gy-5">
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/gadget/oppoAKULAKU.jpg" class="glightbox"><img
-                                    src="assets/img/promo/gadget/oppo AKULAKU.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/gadget/oppo BAF.jpg" class="glightbox"><img
-                                    src="assets/img/promo/gadget/oppo BAF.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/gadget/oppo fif.jpg" class="glightbox"><img
-                                    src="assets/img/promo/gadget/oppo fif.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/gadget/oppo HCI.jpg" class="glightbox"><img
-                                    src="assets/img/promo/gadget/oppo HCI.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/gadget/oppo kp.jpg" class="glightbox"><img
-                                    src="assets/img/promo/gadget/oppo kp.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/gadget/oppo SHOPEE.jpg" class="glightbox"><img
-                                    src="assets/img/promo/gadget/oppo SHOPEE.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
+                        @foreach ($promoGadgetImages as $image)
+                            <div class="col-lg-4 promo-item">
+                                <a href="{{ asset('storage/' . $image->image_path) }}" class="glightbox"><img
+                                        src="{{ asset('storage/' . $image->image_path) }}" class="menu-img img-fluid"
+                                        alt=""></a>
+                            </div><!-- Menu Item -->
+                        @endforeach
+                        @if (count($promoGadgetImages) < 6)
+                            <!-- Jika jumlah gambar kurang dari 6, tambahkan placeholder untuk gambar yang tersisa -->
+                            @for ($i = 0; $i < 6 - count($promoGadgetImages); $i++)
+                                <div class="col-lg-4 promo-item">
+                                    <!-- Tambahkan gambar placeholder di sini -->
+                                    <img src="{{ asset('path/to/placeholder_image.jpg') }}" class="menu-img img-fluid"
+                                        alt="">
+                                </div>
+                            @endfor
+                        @endif
                     </div>
                 </div><!-- End Starter Menu Content -->
 
@@ -220,41 +216,23 @@
 
                     <div class="row gy-5">
 
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/laptop/lenovoideapad.jpg" class="glightbox"><img
-                                    src="assets/img/promo/laptop/lenovoideapad.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/laptop/axio.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/laptop/axio.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/laptop/able.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/laptop/able.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/laptop/hpslim.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/laptop/hpslim.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/laptop/legion.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/laptop/legion.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/laptop/nitro5.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/laptop/nitro5.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
+                        @foreach ($promoLaptopImages as $image)
+                            <div class="col-lg-4 promo-item">
+                                <a href="{{ asset('storage/' . $image->image_path) }}" class="glightbox"><img
+                                        src="{{ asset('storage/' . $image->image_path) }}" class="menu-img img-fluid"
+                                        alt=""></a>
+                            </div><!-- Menu Item -->
+                        @endforeach
+                        @if (count($promoLaptopImages) < 6)
+                            <!-- Jika jumlah gambar kurang dari 6, tambahkan placeholder untuk gambar yang tersisa -->
+                            @for ($i = 0; $i < 6 - count($promoLaptopImages); $i++)
+                                <div class="col-lg-4 promo-item">
+                                    <!-- Tambahkan gambar placeholder di sini -->
+                                    <img src="{{ asset('path/to/placeholder_image.jpg') }}"
+                                        class="menu-img img-fluid" alt="">
+                                </div>
+                            @endfor
+                        @endif
 
                     </div>
                 </div><!-- End Breakfast Menu Content -->
@@ -267,46 +245,28 @@
 
                     <div class="row gy-5">
 
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/computer/epson.jpg" class="glightbox"><img
-                                    src="assets/img/promo/computer/epson.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/computer/epson.jpg" class="glightbox"><img
-                                    src="assets/img/promo/computer/epson.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/computer/epson.jpg" class="glightbox"><img
-                                    src="assets/img/promo/computer/epson.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/computer/hpprint.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/computer/hpprint.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/computer/hpprint.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/computer/hpprint.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/computer/hpprint.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/computer/hpprint.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
+                        @foreach ($promoKomputerImages as $image)
+                            <div class="col-lg-4 promo-item">
+                                <a href="{{ asset('storage/' . $image->image_path) }}" class="glightbox"><img
+                                        src="{{ asset('storage/' . $image->image_path) }}" class="menu-img img-fluid"
+                                        alt=""></a>
+                            </div><!-- Menu Item -->
+                        @endforeach
+                        @if (count($promoKomputerImages) < 6)
+                            <!-- Jika jumlah gambar kurang dari 6, tambahkan placeholder untuk gambar yang tersisa -->
+                            @for ($i = 0; $i < 6 - count($promoKomputerImages); $i++)
+                                <div class="col-lg-4 promo-item">
+                                    <!-- Tambahkan gambar placeholder di sini -->
+                                    <img src="{{ asset('path/to/placeholder_image.jpg') }}"
+                                        class="menu-img img-fluid" alt="">
+                                </div>
+                            @endfor
+                        @endif
 
                     </div>
                 </div><!-- End Lunch Menu Content -->
 
-                <div class="tab-pane fade" id="promo-tv">
+                <div class="tab-pane fade" id="promo-elektronik">
 
                     <div class="tab-header text-center">
                         {{-- <h2>Hot Promo</h2> --}}
@@ -314,88 +274,24 @@
 
                     <div class="row gy-5">
 
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/tv&av/xiaomitv.jpg" class="glightbox"><img
-                                    src="assets/img/promo/tv&av/xiaomitv.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
+                        @foreach ($promoElektronikImages as $image)
+                            <div class="col-lg-4 promo-item">
+                                <a href="{{ asset('storage/' . $image->image_path) }}" class="glightbox"><img
+                                        src="{{ asset('storage/' . $image->image_path) }}" class="menu-img img-fluid"
+                                        alt=""></a>
+                            </div><!-- Menu Item -->
+                        @endforeach
+                        @if (count($promoElektronikImages) < 6)
+                            <!-- Jika jumlah gambar kurang dari 6, tambahkan placeholder untuk gambar yang tersisa -->
+                            @for ($i = 0; $i < 6 - count($promoElektronikImages); $i++)
+                                <div class="col-lg-4 promo-item">
+                                    <!-- Tambahkan gambar placeholder di sini -->
+                                    <img src="{{ asset('path/to/placeholder_image.jpg') }}"
+                                        class="menu-img img-fluid" alt="">
+                                </div>
+                            @endfor
+                        @endif
 
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/tv&av/xiaomitv.jpg" class="glightbox"><img
-                                    src="assets/img/promo/tv&av/xiaomitv.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/tv&av/xiaomitv.jpg" class="glightbox"><img
-                                    src="assets/img/promo/tv&av/xiaomitv.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/tv&av/xiaomitv2.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/tv&av/xiaomitv2.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/tv&av/xiaomitv2.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/tv&av/xiaomitv2.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/tv&av/xiaomitv2.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/tv&av/xiaomitv2.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                    </div>
-                </div><!-- End Dinner Menu Content -->
-
-                <div class="tab-pane fade" id="promo-homeappliances">
-
-                    <div class="tab-header text-center">
-                        {{-- <h2>Hot Promo</h2> --}}
-                    </div>
-
-                    <div class="row gy-5">
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/homeappliances/ezviz.jpeg" class="glightbox"><img
-                                    src="assets/img/promo/homeappliances/ezviz.jpeg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
                     </div>
                 </div><!-- End Dinner Menu Content -->
 
@@ -407,41 +303,23 @@
 
                     <div class="row gy-5">
 
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/galaxywatch.jpg" class="glightbox"><img
-                                    src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/galaxywatch.jpg" class="glightbox"><img
-                                    src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/galaxywatch.jpg" class="glightbox"><img
-                                    src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/galaxywatch.jpg" class="glightbox"><img
-                                    src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/galaxywatch.jpg" class="glightbox"><img
-                                    src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/galaxywatch.jpg" class="glightbox"><img
-                                    src="assets/img/promo/galaxywatch.jpg" class="menu-img img-fluid"
-                                    alt=""></a>
-                        </div><!-- Menu Item -->
+                        @foreach ($promoAksessorisImages as $image)
+                            <div class="col-lg-4 promo-item">
+                                <a href="{{ asset('storage/' . $image->image_path) }}" class="glightbox"><img
+                                        src="{{ asset('storage/' . $image->image_path) }}" class="menu-img img-fluid"
+                                        alt=""></a>
+                            </div><!-- Menu Item -->
+                        @endforeach
+                        @if (count($promoAksessorisImages) < 6)
+                            <!-- Jika jumlah gambar kurang dari 6, tambahkan placeholder untuk gambar yang tersisa -->
+                            @for ($i = 0; $i < 6 - count($promoAksessorisImages); $i++)
+                                <div class="col-lg-4 promo-item">
+                                    <!-- Tambahkan gambar placeholder di sini -->
+                                    <img src="{{ asset('path/to/placeholder_image.jpg') }}"
+                                        class="menu-img img-fluid" alt="">
+                                </div>
+                            @endfor
+                        @endif
                     </div>
                 </div><!-- End Dinner Menu Content -->
 
@@ -453,35 +331,23 @@
 
                     <div class="row gy-5">
 
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/volta.jpg" class="glightbox"><img
-                                    src="assets/img/promo/volta.jpg" class="menu-img img-fluid" alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/volta.jpg" class="glightbox"><img
-                                    src="assets/img/promo/volta.jpg" class="menu-img img-fluid" alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/volta.jpg" class="glightbox"><img
-                                    src="assets/img/promo/volta.jpg" class="menu-img img-fluid" alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/volta.jpg" class="glightbox"><img
-                                    src="assets/img/promo/volta.jpg" class="menu-img img-fluid" alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/volta.jpg" class="glightbox"><img
-                                    src="assets/img/promo/volta.jpg" class="menu-img img-fluid" alt=""></a>
-                        </div><!-- Menu Item -->
-
-                        <div class="col-lg-4 promo-item">
-                            <a href="assets/img/promo/volta.jpg" class="glightbox"><img
-                                    src="assets/img/promo/volta.jpg" class="menu-img img-fluid" alt=""></a>
-                        </div><!-- Menu Item -->
+                        @foreach ($promoElcvehicleImages as $image)
+                            <div class="col-lg-4 promo-item">
+                                <a href="{{ asset('storage/' . $image->image_path) }}" class="glightbox"><img
+                                        src="{{ asset('storage/' . $image->image_path) }}" class="menu-img img-fluid"
+                                        alt=""></a>
+                            </div><!-- Menu Item -->
+                        @endforeach
+                        @if (count($promoElcvehicleImages) < 6)
+                            <!-- Jika jumlah gambar kurang dari 6, tambahkan placeholder untuk gambar yang tersisa -->
+                            @for ($i = 0; $i < 6 - count($promoElcvehicleImages); $i++)
+                                <div class="col-lg-4 promo-item">
+                                    <!-- Tambahkan gambar placeholder di sini -->
+                                    <img src="{{ asset('path/to/placeholder_image.jpg') }}"
+                                        class="menu-img img-fluid" alt="">
+                                </div>
+                            @endfor
+                        @endif
                     </div>
                 </div><!-- End Dinner Menu Content -->
 
@@ -589,6 +455,21 @@
                     </div><!-- End Event item -->
 
                     <div class="swiper-slide event-item d-flex flex-column justify-content-end"
+                        style="background-image: url(assets/img/store/jogorogo.jpeg)">
+                        <a href="https://maps.app.goo.gl/54eseF6XVWoVNk5p7">
+                            <div class="price align-self-start">Maju Hardware Jogorogo</div>
+                            <p class="description">
+                                Jl. Majapahit, Genggong, Jogorogo, Kec. Jogorogo, Kabupaten Ngawi, Jawa Timur 63262
+                            </p>
+                        </a>
+                        <a href="https://wa.me/6285179773557">
+                            <p class="contact">
+                                085179773557
+                            </p>
+                        </a>
+                    </div><!-- End Event item -->
+
+                    <div class="swiper-slide event-item d-flex flex-column justify-content-end"
                         style="background-image: url(assets/img/store/ngawi.JPG)">
                         <a href="https://maps.app.goo.gl/3zVjLZqgcGZrrUnv6">
                             <div class="price align-self-start">Maju Hardware OKAZ Ponorogo</div>
@@ -618,6 +499,22 @@
                         <a href="https://wa.me/6285607970818">
                             <p class="contact">
                                 085607970818
+                            </p>
+                        </a>
+                    </div><!-- End Event item -->
+
+                    <div class="swiper-slide event-item d-flex flex-column justify-content-end"
+                        style="background-image: url(assets/img/store/lorok.jpeg)">
+                        <a href="https://maps.app.goo.gl/54eseF6XVWoVNk5p7">
+                            <div class="price align-self-start">Maju Hardware Lorok</div>
+                            <p class="description">
+                                Jl. Pacitan - Trenggalek, Wiyoro, Ngadirojo, Kec. Ngadirojo, Kabupaten Pacitan, Jawa
+                                Timur 63572
+                            </p>
+                        </a>
+                        <a href="https://wa.me/6285607970818">
+                            <p class="contact">
+
                             </p>
                         </a>
                     </div><!-- End Event item -->

@@ -146,6 +146,16 @@ section {
   .btn-floating.whatsapp:hover {
     background-color: #000;
   }
+
+    .btn-floating.pricelist {
+    bottom: 50px;
+    background-color: #000;
+    border: 2px solid #FECB00;
+  }
+
+  .btn-floating.pricelist:hover {
+    background-color: #000;
+  }
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -573,7 +583,7 @@ section {
   }
 
   .mobile-nav-show {
-    color: var(--color-secondary);
+    color: #fff;
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -583,7 +593,7 @@ section {
   }
 
   .mobile-nav-hide {
-    color: var(--color-secondary);
+    color: var(--color-default);
     font-size: 32px;
     cursor: pointer;
     line-height: 0;
